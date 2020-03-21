@@ -6,7 +6,10 @@ class UsersController < ApplicationController
 
     def show 
         user = User.find(params[:id])
-        render json: user
+        trees = Tree.all.select { |tree| tree.user_id == user.id}
+        
+
+        render json: {id: user.id, name: user.name, trees: trees}
     end 
 
     def create 
