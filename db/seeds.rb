@@ -8,11 +8,11 @@
 
 # User.destroy_all
 
-# User.create(name: 'Jay', password: 123)
-# User.create(name: 'Mocha', password: 123)
+User.create(name: 'Jay', password: '123')
+User.create(name: 'Mocha', password: '123')
 
 
-# Atmosphere.create(oxygen: 30, carbon_dioxide: 25, temperature: 50)
+Atmosphere.create(oxygen: 30, carbon_dioxide: 25, temperature: 50)
 
 
 Tree.create(size:'large', carbon_dioxide: -2, oxygen: 3, user_id: 3, atmosphere_id: 1, image: 'https://toppng.com/uploads/preview/ine-trees-silhouette-clipart-panda-pine-tree-vector-115630115124z9ezkopbw.png')

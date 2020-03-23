@@ -10,6 +10,11 @@ class TreesController < ApplicationController
         render json: tree
     end 
 
+    def show 
+        tree = Tree.find(params[:id])
+        render json: tree
+    end 
+
     def update 
         tree = Tree.find(params [:id])
         tree.update(tree_params)

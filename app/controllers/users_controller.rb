@@ -7,13 +7,17 @@ class UsersController < ApplicationController
     def show 
         user = User.find(params[:id])
         trees = Tree.all.select { |tree| tree.user_id == user.id}
-        
-
         render json: {id: user.id, name: user.name, trees: trees}
     end 
 
     def create 
-        user = User.create(user_params)
+        user = User.new(name: params[:name], password: params[:password])
+
+        if user.save
+            render json: user
+        else 
+            render json: {errors: user.errors.full_messages}
+        end 
 
     end 
 
