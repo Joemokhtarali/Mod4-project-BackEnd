@@ -9,4 +9,17 @@ class AuthController < ApplicationController
             render json: {errors: 'wrong name or password'}
         end 
     end 
+
+    def auto_login
+        # byebug
+        user = User.find_by(id: request.headers['Authorization'])
+
+        if user
+            render json: user
+        else
+            render json: {errors: 'nope'} 
+        end 
+    end 
+
+    
 end 
