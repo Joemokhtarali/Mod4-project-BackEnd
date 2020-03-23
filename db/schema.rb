@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(version: 2020_03_20_145248) do
   create_table "trees", force: :cascade do |t|
     t.string "image"
     t.string "size"
-    t.integer "oxygen"
-    t.integer "carbon_dioxide"
+    t.integer "oxygen", default: 3
+    t.integer "carbon_dioxide", default: -2
+    t.integer "firewood", default: 0
     t.integer "user_id"
     t.integer "atmosphere_id"
     t.datetime "created_at", precision: 6, null: false
