@@ -11,13 +11,8 @@ class AuthController < ApplicationController
     end 
 
     def auto_login
-        # byebug
-        user = User.find_by(id: request.headers['Authorization'])
-
-        if user
-            render json: user
-        else
-            render json: {errors: 'nope'} 
+        if session_user
+            render json: session_user
         end 
     end 
 

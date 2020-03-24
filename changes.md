@@ -1,5 +1,5 @@
 Sunday 03/22 
-- Database changes, tree will have fireWoord as integer default value instead of size 
+- Database changes, tree will have fireWoord as integer default value instead
 - Also setting default values for carbon_dioxide, oxygen, image
 
 
