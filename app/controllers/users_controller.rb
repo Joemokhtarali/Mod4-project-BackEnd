@@ -6,6 +6,9 @@ class UsersController < ApplicationController
 
     def show 
         user = User.find(params[:id])
+        atmospheres = Atmosphere.all.select{ |a| a.user_id == user.id}
+        
+        render json: {id: user.id, atmospheres: atmospheres}
         
     end 
 
