@@ -5,11 +5,14 @@ class AtmospheresController < ApplicationController
         render json: atmospheres, except: [:created_at, :updated_at] 
     end 
 
+    # def create 
+    #     user = User.new(name: params[:name], password: params[:password])
+
     def create 
         atmosphere = Atmosphere.create(atmosphere_params)
-        10.times do Tree.create(atmosphere_id: atmosphere.id)
-        end 
-        render json: atmosphere
+        trees = 10.times do Tree.create(atmosphere_id: atmosphere.id)
+         end 
+        render json: atmosphere, include: [:trees]
     end 
 
     def show 

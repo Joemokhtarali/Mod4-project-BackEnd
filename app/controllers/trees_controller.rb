@@ -15,9 +15,16 @@ class TreesController < ApplicationController
         render json: tree
     end 
 
+
+    def edit 
+        @tree = Tree.find(params [:id])
+        byebug
+    end 
+
     def update 
-        tree = Tree.find(params [:id])
-        tree.update(tree_params)
+        @tree = Tree.find(params [:id])
+        
+        @tree.update(tree_params)
     end 
 
     def destroy 
@@ -28,7 +35,7 @@ class TreesController < ApplicationController
     private
     
     def tree_params 
-        params.require(:tree).permit(:size, :oxygen, :carbon_dioxide, :user_id, :atmosphere_id, :image)
+        params.require(:tree).permit(:size, :oxygen, :carbon_dioxide, :atmosphere_id, :image, :firewood)
     end 
 
 end
