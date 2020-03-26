@@ -17,14 +17,15 @@ class TreesController < ApplicationController
 
 
     def edit 
-        @tree = Tree.find(params [:id])
-        byebug
+        @tree = Tree.find(params[:id])
+      
+        render json: @tree
     end 
 
     def update 
-        @tree = Tree.find(params [:id])
-        
+        @tree = Tree.find(params[:id])
         @tree.update(tree_params)
+        render json: @tree
     end 
 
     def destroy 
