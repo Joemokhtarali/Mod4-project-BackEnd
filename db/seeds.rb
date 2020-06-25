@@ -10,6 +10,7 @@
 
 User.create(name: 'Jay', password: '123')
 User.create(name: 'Mocha', password: '123')
+User.create(name: 'Mocha1', password: '1234')
 
 
 # Atmosphere.create(oxygen: 30, carbon_dioxide: 25, user_id: 1)
