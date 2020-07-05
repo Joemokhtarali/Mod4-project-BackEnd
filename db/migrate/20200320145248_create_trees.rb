@@ -5,7 +5,7 @@ class CreateTrees < ActiveRecord::Migration[6.0]
       t.string :size, default: 'small'
       t.integer :oxygen, default: 3 
       t.integer :carbon_dioxide, default: -2
-      t.integer :firewood, default: 0
+      t.integer :firewood, default: 1
       t.integer :atmosphere_id
 
       t.timestamps
